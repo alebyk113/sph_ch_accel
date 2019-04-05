@@ -6,7 +6,6 @@ import json
 class Load_data:
 	def __init__(self, data_path, meta_path):
 		self.data_path = data_path
-		self.meta_path = meta_path
 
 		self.file_list = [f for f in os.listdir(self.data_path) if not f.startswith('.')]    
 		self.acceleration_keys = json.load(open(os.path.join(meta_path, 'accelerometer_axes.json')))
@@ -17,7 +16,6 @@ class Load_data:
 		dfs = []
 
 		for fi, file_id in enumerate(self.file_list):
-			print(fi,file_id)
 			f_name = os.path.join(self.data_path,file_id,'acceleration.csv')
 			accel_rssi = pd.read_csv(f_name, index_col=0)
 

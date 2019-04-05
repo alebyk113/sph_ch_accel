@@ -6,9 +6,13 @@ meta_path = './public_data/metadata'
 
 
 data = Load_data(data_path,meta_path)
-df = data.load_accel()
+dfs = data.load_accel()
 
 
+f_e = Feature_extraction(data_path,dfs)
+
+
+f_e.get_features(time_window=100)
 
 
 

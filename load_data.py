@@ -12,7 +12,8 @@ class Load_data:
 		self.rssi_keys = json.load(open(os.path.join(meta_path, 'access_point_names.json')))
 
 	def load_accel(self):
-
+		''' returns a list of dataframes with acceleration from each exp'''
+		
 		dfs = []
 
 		for fi, file_id in enumerate(self.file_list):
